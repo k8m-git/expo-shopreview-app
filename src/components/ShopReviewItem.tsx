@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, Dimensions } from 'react-native';
 /* types */
 import { Shop } from '../types/shop';
+import { Stars } from './Starts';
 
 const { width } = Dimensions.get("window");
 const CONTAINER_WIDTH = width / 2;
@@ -21,6 +22,7 @@ export const ShopReviewItem: React.FC<Props> = ({ shop }: Props) => {
             <Image source={{ uri: imageUrl }} style={styles.image} />
             <Text style={styles.nameText}>{name}</Text>
             <Text style={styles.placeText}>{place}</Text>
+            <Stars score={score} />
         </View>
     );
 }

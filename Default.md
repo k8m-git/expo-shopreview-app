@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 type Props = {}
 
-export const componentName: React.FC<Props> = ({ shop }: Props) => {
+export const componentName: React.FC<Props> = ({}: Props) => {
   return (
     <View style={styles.container}>
       <Text>Default</Text>
