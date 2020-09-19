@@ -13,5 +13,8 @@ https://docs.expo.io/guides/using-firebase/
 ### Constants
 https://docs.expo.io/versions/latest/sdk/constants/
 
+### Icon
+https://icons.expo.fyi/
+
 ## 拡張子tsxとtsの使い分け
 ```<View />```や```<Text />```などのJSXを返す場合はtsx
