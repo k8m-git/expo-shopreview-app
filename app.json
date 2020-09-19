@@ -19,6 +19,18 @@
     "ios": {
       "supportsTablet": true
     },
+    "extra": {
+      "firebase": {
+        "apiKey": "AIzaSyACLmUbhCy9q8RRSlz2B9fNc6E05eZtZ04",
+        "authDomain": "shop-review-a5c9b.firebaseapp.com",
+        "databaseURL": "https://shop-review-a5c9b.firebaseio.com",
+        "projectId": "shop-review-a5c9b",
+        "storageBucket": "shop-review-a5c9b.appspot.com",
+        "messagingSenderId": "359950582611",
+        "appId": "1:359950582611:web:0c46fedd0e4f4a9ac0d7a6",
+        "measurementId": "G-039F83XREQ"
+      }
+    },
     "web": {
       "favicon": "./assets/favicon.png"
     }

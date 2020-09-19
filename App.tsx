@@ -1,28 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import * as firebase from 'firebase';
-import "firebase/firestore";
-
-if (!firebase.apps.length) { // ホットリロード時のエラー対策
-  const firebaseConfig = {
-    apiKey: "AIzaSyACLmUbhCy9q8RRSlz2B9fNc6E05eZtZ04",
-    authDomain: "shop-review-a5c9b.firebaseapp.com",
-    databaseURL: "https://shop-review-a5c9b.firebaseio.com",
-    projectId: "shop-review-a5c9b",
-    storageBucket: "shop-review-a5c9b.appspot.com",
-    messagingSenderId: "359950582611",
-    appId: "1:359950582611:web:0c46fedd0e4f4a9ac0d7a6",
-    measurementId: "G-039F83XREQ"
-  };
-  firebase.initializeApp(firebaseConfig);
-}
-
-type Shop = {
-  // TypeScriptでの型定義
-  name: string;
-  place: string;
-}
-
+/* lib */
+import { getShops } from './src/lib/firebase'
+/* types */
+import { Shop } from './src/types/shop';
 
 export default function App() {
   const [shops, setShops] = useState<Shop[]>([])
@@ -33,8 +14,7 @@ export default function App() {
 
   // 非同期で実行する場合はasyncを利用する
   const getFirebaseItems = async () => {
-    const snapshot = await firebase.firestore().collection('shops').get()
-    const shops = snapshot.docs.map(doc => doc.data() as Shop)
+    const shops = await getShops()
     setShops(shops)
   }
 
