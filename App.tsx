@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList, SafeAreaView } from 'react-native';
 /* lib */
 import { getShops } from './src/lib/firebase'
 /* components */
@@ -21,7 +21,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={shops}
         renderItem={({ item }: { item: Shop }) => <ShopReviewItem shop={item} />}
@@ -29,7 +29,7 @@ export default function App() {
         // 横二列、縦二列に並べる
         numColumns={2}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
