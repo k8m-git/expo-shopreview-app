@@ -7,7 +7,7 @@ import { ShopReviewItem } from '../components/ShopReviewItem'
 /* types */
 import { Shop } from '../types/shop';
 
-export const HomeScreen = () => {
+export const HomeScreen = ({ navigation }) => {
     const [shops, setShops] = useState<Shop[]>([])
 
     useEffect(() => {
@@ -20,11 +20,17 @@ export const HomeScreen = () => {
         setShops(shops)
     }
 
+    const onPressShop = () => {
+        navigation.navigate('Shop')
+    }
+
     return (
         <SafeAreaView style={styles.container}>
             <FlatList
                 data={shops}
-                renderItem={({ item }: { item: Shop }) => <ShopReviewItem shop={item} />}
+                renderItem={({ item }: { item: Shop }) => (
+                    <ShopReviewItem shop={item} onPress={onPressShop} />
+                )}
                 keyExtractor={(item, index) => index.toString()}
                 // 横二列、縦二列に並べる
                 numColumns={2}
