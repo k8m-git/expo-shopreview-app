@@ -16,6 +16,7 @@ https://docs.expo.io/versions/latest/sdk/constants/
 ### Icon
 https://icons.expo.fyi/
 
+## React Navigation関連
 ### React Navigation
 https://github.com/react-navigation/react-navigation
 https://reactnavigation.org/
@@ -25,6 +26,9 @@ https://reactnavigation.org/docs/stack-navigator/
 
 ### Bottom Navigator
 https://reactnavigation.org/docs/bottom-tab-navigator/
+
+### Type Checking
+https://reactnavigation.org/docs/typescript/
 
 ## 拡張子tsxとtsの使い分け
 ```<View />```や```<Text />```などのJSXを返す場合はtsx
