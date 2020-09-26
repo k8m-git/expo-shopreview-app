@@ -16,5 +16,12 @@ https://docs.expo.io/versions/latest/sdk/constants/
 ### Icon
 https://icons.expo.fyi/
 
+### React Navigation
+https://github.com/react-navigation/react-navigation
+https://reactnavigation.org/
+
+### Stack Navigation
+https://reactnavigation.org/docs/stack-navigator/
+
 ## 拡張子tsxとtsの使い分け
 ```<View />```や```<Text />```などのJSXを返す場合はtsx
