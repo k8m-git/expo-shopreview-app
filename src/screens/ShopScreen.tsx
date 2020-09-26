@@ -1,12 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import { StyleSheet, SafeAreaView, Text } from 'react-native'
+import React, { useEffect } from 'react'
+import { StyleSheet, SafeAreaView } from 'react-native'
+/* components */
+import { ShopDetail } from '../components/ShopDetail'
+/* types */
+import { RouteProp } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../types/navigation'
 
-export const ShopScreen: React.FC = () => {
-    useEffect(() => { }, [])
+type Props = {
+    navigation: StackNavigationProp<RootStackParamList, 'Shop'>
+    route: RouteProp<RootStackParamList, 'Shop'>
+}
+
+export const ShopScreen: React.FC<Props> = ({ navigation, route }) => {
+    const { shop } = route.params;
+
+    useEffect(() => {
+        navigation.setOptions({ title: shop.name })
+    }, [shop]) //変更の監視する値の指定
 
     return (
         <SafeAreaView style={styles.container}>
-            <Text>ShopScreen</Text>
+            <ShopDetail shop={shop}></ShopDetail>
         </SafeAreaView>
     )
 }
