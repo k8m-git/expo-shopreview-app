@@ -1,14 +1,16 @@
 import React from 'react'
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack'
 /* screen */
 import { HomeScreen } from '../screens/HomeScreen'
 import { ShopScreen } from '../screens/ShopScreen'
+import { CreateReviewScreen } from '../screens/CreateRviewScreen'
 /* types */
 import { RootStackParamList } from '../types/navigation'
 
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator<RootStackParamList>()
+const RootStack = createStackNavigator<RootStackParamList>()
 
-export const HomeStackNavigator = () => {
+const MainStack = () => {
     return (
         <Stack.Navigator
             screenOptions={{
@@ -24,3 +26,15 @@ export const HomeStackNavigator = () => {
         </Stack.Navigator>
     );
 }
+
+// return()の省略
+export const HomeStackNavigator = () => (
+    <RootStack.Navigator mode='modal'>
+        <RootStack.Screen
+            name='Main'
+            component={MainStack}
+            options={{ headerShown: false }}
+        />
+        <RootStack.Screen name='CreateReview' component={CreateReviewScreen} />
+    </RootStack.Navigator>
+)

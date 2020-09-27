@@ -30,5 +30,8 @@ https://reactnavigation.org/docs/bottom-tab-navigator/
 ### Type Checking
 https://reactnavigation.org/docs/typescript/
 
+### Modal
+https://reactnavigation.org/docs/modal
+
 ## 拡張子tsxとtsの使い分け
 ```<View />```や```<Text />```などのJSXを返す場合はtsx
