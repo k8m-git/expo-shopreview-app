@@ -1,13 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { StyleSheet, SafeAreaView, ActivityIndicator, Text } from 'react-native'
 import { signin } from '../lib/firebase'
+import { UserContext } from '../contexts/userContxst'
 
 export const AuthScreen: React.FC = () => {
+    const { setUser } = useContext(UserContext)
+
     // 初回の一回目のみ呼び出しの場合は第二引数に空
     useEffect(() => {
         const fetchUser = async () => {
             const user = await signin()
-            console.log(user)
+            setUser(user)
         }
         fetchUser()
     }, [])
