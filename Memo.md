@@ -12,6 +12,10 @@ https://docs.expo.io/guides/using-firebase/
 ### 匿名ログイン
 https://firebase.google.com/docs/auth/web/anonymous-auth?hl=ja
 
+## React関連
+### Context
+https://ja.reactjs.org/docs/context.html
+
 ## Expo関連
 ### Constants
 https://docs.expo.io/versions/latest/sdk/constants/
